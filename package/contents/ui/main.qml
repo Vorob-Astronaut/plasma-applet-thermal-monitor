@@ -358,7 +358,7 @@ Item {
         id: nvidiaDS
         engine: 'executable'
 
-        property string nvidiaSource: 'nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader | awk '{if(min==""){min=max=$1}; if($1>max) {max=$1}; if($1<min) {min=$1}; total+=$1; count+=1} END {print max}''
+        property string nvidiaSource: 'nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader | awk \'{if(min==""){min=max=$1}; if($1>max) {max=$1}; if($1<min) {min=$1}; total+=$1; count+=1} END {print max}\''
 
         onNewData: {
             var temperature = 0
